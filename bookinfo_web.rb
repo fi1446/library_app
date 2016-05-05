@@ -47,7 +47,7 @@ server.mount_proc("/entry") { |req, res|
 		template = ERB.new(File.read('noentried.erb'))
 		res.body << template.result(binding)
 	else
-		dbh.do("insert into bookinfos values ('#{req.query['id']}', '#{req.query['title']}','#{req.query['author']}','#{req.query['page']}','#{req.query['publish_date']}' );")
+    dbh.do("insert into bookinfos values ('#{req.query['id']}', '#{req.query['title'].force_encoding("utf-8")}','#{req.query['author'].force_encoding("utf-8")}','#{req.query['page']}','#{req.query['publish_date']}' );")
 		dbh.disconnect
 
 		template = ERB.new(File.read('entried.erb'))
