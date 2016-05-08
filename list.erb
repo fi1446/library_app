@@ -12,8 +12,7 @@
 </head>
 <body>
 
-<h1>
-<h2>蔵書データの表示</h2>
+<h1>蔵書データの表示</h1>
 <p>処理する蔵書データを選択してください。</p>
 
 <a href="list.erb">蔵書データの表示</a> | 
@@ -34,8 +33,8 @@
 		<tr>
 			<% row.each_with_name do |val, name| %>
 			<% if name == 'id' then %>
-			<td><input type="radio" name="operation" value=<%="#{val}.delete"%>/></td>
-			<td><input type="radio" name="operation" value=<%="#{val}.edit"%>/></td>
+			<td><input type="radio" name="operation" value=<%="#{val}.delete"%> /></td>
+			<td><input type="radio" name="operation" value=<%="#{val}.edit"%> /></td>
 			<% end %>
 			<td><%= "#{val.to_s}" %></td>
 			<% end %>
