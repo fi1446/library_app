@@ -1,5 +1,3 @@
-
-
 require 'webrick'
 require 'erb'
 require 'dbi'
